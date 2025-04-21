@@ -633,241 +633,275 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <p class="" data-start="277" data-end="295">Program game logic</p>
 </li>
 </ul>
-</div></div>    <div class="features-container"><span class="features-label project-field-label">What I Learn:</span><div class="what-i-learn"></div>        <div class="collapse-group">
-            <div class="item-collapse-label">
-                <div class="collapse-icons">
-                    <span class="collapse-icon collapse-icon-up"></span>
-                    <span class="collapse-icon collapse-icon-down"></span>
-                </div>
-                URP and Lighting            </div>
-            <div class="item-collapse-details">
-                <div class="demo-video-wrapper demo-video-url-wrapper">
-					<iframe title="Dragon Adventure Lighting" width="786" height="442" src="https://www.youtube.com/embed/8T83RW5HSvY?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</div></div>    
+
+<div class="features-container"><span class="features-label project-field-label">What I Learn:</span><div class="what-i-learn"></div>        
+	<div class="collapse-group">
+		<div class="item-collapse-label">
+			<div class="collapse-icons">
+				<span class="collapse-icon collapse-icon-up"></span>
+				<span class="collapse-icon collapse-icon-down"></span>
+			</div>
+			URP and Lighting            
+		</div>
+		<div class="item-collapse-details">
+			<div class="demo-video-wrapper demo-video-url-wrapper">
+				<iframe title="Dragon Adventure Lighting" width="786" height="442" src="https://www.youtube.com/embed/8T83RW5HSvY?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+			</div>
+		</div>
+	</div>
+			
+	
+	<div class="collapse-group">
+		<div class="item-collapse-label">
+			<div class="collapse-icons">
+				<span class="collapse-icon collapse-icon-up"></span>
+				<span class="collapse-icon collapse-icon-down"></span>
+			</div>
+			Animations            </div>
+		<div class="item-collapse-details">
+			<div class="demo-video-wrapper demo-video-url-wrapper">
+				<iframe title="Dragon Adventure Animation" width="786" height="442" src="https://www.youtube.com/embed/dfmmnNx937Q?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+			</div>
+
+			Animations are structured into 3 layers: Eye, Head, and Body.
+
+			<ul> 
+				<li><strong>Eye Layer:</strong> Controls blinking</li> 
+				<li><strong>Head Layer:</strong> Controls head rotation and mouth movement</li> 
+				<li><strong>Body Layer:</strong> Controls movement of legs, arms, wings, tail, and body</li> 
+			</ul>
+
+			Uses Unity's built-in Animator and Animation system,
+			allowing for condition-based management and smooth transitions between animation clips.<p></p>            
+		</div>
+	</div>
+			
+	<div class="collapse-group">
+		<div class="item-collapse-label">
+			<div class="collapse-icons">
+				<span class="collapse-icon collapse-icon-up"></span>
+				<span class="collapse-icon collapse-icon-down"></span>
+			</div>
+			Parallax Background            
+		</div>
+		<div class="item-collapse-details">
+			<div class="demo-video-wrapper demo-video-url-wrapper">
+				<iframe title="Dragon Adventure ParallaxBG" width="786" height="442" src="https://www.youtube.com/embed/Aczh2WpVMFo?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+			</div>
+
+			<div class="item-collapse-label">
+				<div class="collapse-icons">
+					<span class="collapse-icon collapse-icon-up"></span>
+					<span class="collapse-icon collapse-icon-down"></span>
 				</div>
+				Code Demo            
 			</div>
-        </div>
-                <div class="collapse-group">
-            <div class="item-collapse-label">
-                <div class="collapse-icons">
-                    <span class="collapse-icon collapse-icon-up"></span>
-                    <span class="collapse-icon collapse-icon-down"></span>
-                </div>
-                Animations            </div>
-            <div class="item-collapse-details">
-                <div class="demo-video-wrapper demo-video-url-wrapper">
-					<iframe title="Dragon Adventure Animation" width="786" height="442" src="https://www.youtube.com/embed/dfmmnNx937Q?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-				</div>
+		
+			<div class="item-collapse-details">
+				<pre><code class="language-php hljs">    
+					<span class="hljs-keyword">public</span> 
+					<span class="hljs-keyword">float</span> 
+					parallaxEffect = 
+					<span class="hljs-number">1</span>; 
+					<span class="hljs-comment">//Move speed same camera speed;</span>
+					<span class="hljs-comment">// Start is called before the first frame update</span>
+					<span class="hljs-keyword">void</span> <span class="hljs-title function_ invoke__">Start</span>()
+					{
+						_MainCamera = Camera.main;
+						startPos = transform.position.x;
+					}
+
+					<span class="hljs-comment">// Update is called once per frame</span>
+					<span class="hljs-keyword">void</span> <span class="hljs-title function_ invoke__">Update</span>()
+					{
+						<span class="hljs-keyword">float</span> distance = _MainCamera.transform.position.x * parallaxEffect;
+						transform.position = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vector3</span>(startPos - distance, transform.position.y, transform.position.z);
+					}
+				</code></pre>
+				<p><strong>Code Explanation:</strong> Each individual layer — background, foreground, and playerground — is assigned a different <code>parallaxEffect</code> value.<br>
+					As the camera moves, each layer scrolls at a different speed,<br>
+					creating a sense of depth in the game.
+				</p>            
 			</div>
-Animations are structured into 3 layers: Eye, Head, and Body.
+		</div>
+	</div>
 
-<ul> 
-<li><strong>Eye Layer:</strong> Controls blinking</li> 
-<li><strong>Head Layer:</strong> Controls head rotation and mouth movement</li> 
-<li><strong>Body Layer:</strong> Controls movement of legs, arms, wings, tail, and body</li> 
-</ul>
-
-Uses Unity's built-in Animator and Animation system,
-allowing for condition-based management and smooth transitions between animation clips.<p></p>            </div>
-        </div>
-                <div class="collapse-group">
-            <div class="item-collapse-label">
-                <div class="collapse-icons">
-                    <span class="collapse-icon collapse-icon-up"></span>
-                    <span class="collapse-icon collapse-icon-down"></span>
-                </div>
-                Parallax Background            </div>
-            <div class="item-collapse-details">
-                <div class="demo-video-wrapper demo-video-url-wrapper">
-					<iframe title="Dragon Adventure ParallaxBG" width="786" height="442" src="https://www.youtube.com/embed/Aczh2WpVMFo?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-				</div>
+	<div class="collapse-group">
+		<div class="item-collapse-label">
+			<div class="collapse-icons">
+				<span class="collapse-icon collapse-icon-up"></span>
+				<span class="collapse-icon collapse-icon-down"></span>
 			</div>
-            <div class="item-collapse-label">
-                <div class="collapse-icons">
-                    <span class="collapse-icon collapse-icon-up"></span>
-                    <span class="collapse-icon collapse-icon-down"></span>
-                </div>
-                Code Demo            </div>
-            <div class="item-collapse-details">
-                <pre><code class="language-php hljs">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> parallaxEffect = <span class="hljs-number">1</span>; <span class="hljs-comment">//Move speed same camera speed;</span>
-    <span class="hljs-comment">// Start is called before the first frame update</span>
-    <span class="hljs-keyword">void</span> <span class="hljs-title function_ invoke__">Start</span>()
-    {
-        _MainCamera = Camera.main;
-        startPos = transform.position.x;
-    }
-
-    <span class="hljs-comment">// Update is called once per frame</span>
-    <span class="hljs-keyword">void</span> <span class="hljs-title function_ invoke__">Update</span>()
-    {
-        <span class="hljs-keyword">float</span> distance = _MainCamera.transform.position.x * parallaxEffect;
-        transform.position = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vector3</span>(startPos - distance, transform.position.y, transform.position.z);
-    }</code></pre><p><strong>Code Explanation:</strong> Each individual layer — background, foreground, and playerground — is assigned a different <code>parallaxEffect</code> value.<br>
-As the camera moves, each layer scrolls at a different speed,<br>
-creating a sense of depth in the game.</p>            </div>
-        </div>
-                    </div>
-        </div>
-                <div class="collapse-group">
-            <div class="item-collapse-label">
-                <div class="collapse-icons">
-                    <span class="collapse-icon collapse-icon-up"></span>
-                    <span class="collapse-icon collapse-icon-down"></span>
-                </div>
-                Sprite Shape            </div>
-            <div class="item-collapse-details">
-                <div class="demo-video-wrapper demo-video-url-wrapper">
-					<iframe title="Dragon Adventure Sprite Shape" width="786" height="442" src="https://www.youtube.com/embed/rc9NqojMAMk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-				</div>
+			Sprite Shape            </div>
+		<div class="item-collapse-details">
+			<div class="demo-video-wrapper demo-video-url-wrapper">
+				<iframe title="Dragon Adventure Sprite Shape" width="786" height="442" src="https://www.youtube.com/embed/rc9NqojMAMk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 			</div>
-<p>For performance optimization, I use a single continuous Sprite Shape for the ground and another for the upper edge. I minimize the number of spline points, mark the objects as static, and disable collider updates.</p><p></p>            </div>
-        </div>
-                <div class="collapse-group">
-            <div class="item-collapse-label">
-                <div class="collapse-icons">
-                    <span class="collapse-icon collapse-icon-up"></span>
-                    <span class="collapse-icon collapse-icon-down"></span>
-                </div>
-                Input Processing            </div>
-            <div class="item-collapse-details">
-                <p></p><h3>Description:</h3> <h2>For Unity Editor:</h2>
 
-<ul>
-<li>When the <strong>Space</strong> key is pressed, the character jumps by applying predefined forces and updating animation states.</li>
-<li>When the <strong>left mouse button</strong> is held down, the character continuously fires (attack is triggered) until the mouse button is released.</li>
-</ul>
-
-<p>This block handles input specifically for the Unity Editor:</p>
-
-<pre><code class="hljs language-php">
-<span class="hljs-comment">#if UNITY_EDITOR</span>
-
-<span class="hljs-comment">// Process Moving</span>
-<span class="hljs-keyword">if</span> (Input.<span class="hljs-title function_ invoke__">GetKeyDown</span>(KeyCode.Space))
-{
-    isHoldingOnLeft = <span class="hljs-literal">true</span>;
-    status = PlayerStatus.Normal;
-    anim.<span class="hljs-title function_ invoke__">SetBool</span>(<span class="hljs-string">"isIdle"</span>, <span class="hljs-literal">false</span>); <span class="hljs-comment">// onGround = false;</span>
-
-    <span class="hljs-comment">// tutorialManager.SetIndex(-1); // Passed step 1;</span>
-
-    <span class="hljs-comment">// Set Force</span>
-    tempJumpForce = jumpForce;
-    tempMoveForce = moveForce;
-    rgbd2D.velocity = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vector2</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-    <span class="hljs-title function_ invoke__">Moving</span>();
-    tempJumpForce = additionalJumpForce;
-    tempMoveForce = additionalMoveForce;
-}
-
-<span class="hljs-keyword">if</span> (Input.<span class="hljs-title function_ invoke__">GetKeyUp</span>(KeyCode.Space))
-{
-    isHoldingOnLeft = <span class="hljs-literal">false</span>;
-    holdingDuration = <span class="hljs-number">0</span>f;
-}
-
-<span class="hljs-comment">// Process left mouse clicked =&gt; Shooter</span>
-<span class="hljs-keyword">if</span> (EventSystem.current.<span class="hljs-title function_ invoke__">IsPointerOverGameObject</span>())
-{
-    <span class="hljs-keyword">return</span>;
-}
-
-<span class="hljs-keyword">if</span> (Input.<span class="hljs-title function_ invoke__">GetMouseButtonDown</span>(<span class="hljs-number">0</span>))
-{
-    <span class="hljs-keyword">var</span> clickPos = Input.mousePosition;
-    <span class="hljs-keyword">if</span> (attackInputEnabled)
-    {
-        emberSkillManager.<span class="hljs-title function_ invoke__">TryAttack</span>(clickPos, <span class="hljs-attr">isDown</span>: <span class="hljs-literal">true</span>);
-    }
-}
-
-<span class="hljs-keyword">if</span> (Input.<span class="hljs-title function_ invoke__">GetMouseButtonUp</span>(<span class="hljs-number">0</span>))
-{
-    <span class="hljs-keyword">var</span> clickPos = Input.mousePosition;
-    emberSkillManager.<span class="hljs-title function_ invoke__">TryAttack</span>(clickPos, <span class="hljs-attr">isDown</span>: <span class="hljs-literal">false</span>);
-}
-</code></pre>
-
-<h2>For Mobile:</h2>
-
-<ul>
-  <li><strong>Touching the left half</strong> of the screen causes the character to <strong>move/jump</strong>.</li>
-  <li><strong>Tapping repeatedly or holding</strong> on the <strong>right half</strong> of the screen allows the character to <strong>shoot continuously</strong>.</li>
-</ul>
-
-<pre><code class="hljs language-csharp">
-<span class="hljs-meta">#<span class="hljs-keyword">elif</span> UNITY_ANDROID || UNITY_IOS</span>
-
-<span class="hljs-keyword">if</span> (Input.touchCount &gt; <span class="hljs-number">0</span>)
-{
-    Touch[] myTouches = Input.touches;
-
-    <span class="hljs-keyword">foreach</span> (Touch touch <span class="hljs-keyword">in</span> myTouches)
-    {
-        <span class="hljs-comment">// If touch on left side =&gt; Movement</span>
-        <span class="hljs-keyword">if</span> (touch.position.x &lt; Screen.width * <span class="hljs-number">2</span> / <span class="hljs-number">5</span>)
-        {
-            <span class="hljs-keyword">if</span> (touch.phase == TouchPhase.Began)
-            {
-                isHoldingOnLeft = <span class="hljs-literal">true</span>;
-                status = PlayerStatus.Normal;
-                anim.SetBool(<span class="hljs-string">"isIdle"</span>, <span class="hljs-literal">false</span>); <span class="hljs-comment">// onGround = false;</span>
-
-                <span class="hljs-comment">// tutorialManager.SetIndex(-1); // Passed step 1</span>
-
-                <span class="hljs-comment">// Set Force</span>
-                tempJumpForce = jumpForce;
-                tempMoveForce = moveForce;
-                rgbd2D.velocity = <span class="hljs-keyword">new</span> Vector2(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-                Moving();
-                tempJumpForce = additionalJumpForce;
-                tempMoveForce = additionalMoveForce;
-            }
-
-            <span class="hljs-keyword">if</span> (touch.phase == TouchPhase.Ended)
-            {
-                isHoldingOnLeft = <span class="hljs-literal">false</span>;
-                holdingDuration = <span class="hljs-number">0f</span>;
-            }
-        }
-        <span class="hljs-comment">// If touch on right side =&gt; Shooting</span>
-        <span class="hljs-keyword">else</span>
-        {
-            <span class="hljs-keyword">if</span> (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-            {
-                <span class="hljs-keyword">return</span>;
-            }
-
-            <span class="hljs-keyword">if</span> (touch.phase == TouchPhase.Began)
-            {
-                emberSkillManager.TryAttack(touch.position, isDown: <span class="hljs-literal">true</span>);
-            }
-            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (touch.phase == TouchPhase.Ended)
-            {
-                emberSkillManager.TryAttack(touch.position, isDown: <span class="hljs-literal">false</span>);
-            }
-        }
-    }
-}
-<span class="hljs-meta">#<span class="hljs-keyword">endif</span></span>
-</code></pre>
-<p></p>            
-
+			<p>For performance optimization, I use a single continuous Sprite Shape for the ground and another for the upper edge. I minimize the number of spline points, mark the objects as static, and disable collider updates.</p><p></p>            </div>
+		</div>
+	</div>
+			
+	<div class="collapse-group">
+		<div class="item-collapse-label">
+			<div class="collapse-icons">
+				<span class="collapse-icon collapse-icon-up"></span>
+				<span class="collapse-icon collapse-icon-down"></span>
 			</div>
-        </div>
+			Input Processing            
+		</div>
+		<div class="item-collapse-details">
+			<p></p><h3>Description:</h3> <h2>For Unity Editor:</h2>
 
-		<div class="collapse-group">
-            <div class="item-collapse-label active">
-                <div class="collapse-icons">
-                    <span class="collapse-icon collapse-icon-up"></span>
-                    <span class="collapse-icon collapse-icon-down"></span>
-                </div>
-                Particle System            </div>
-            <div class="item-collapse-details" style="display: block;">
-                <div class="demo-video-wrapper demo-video-url-wrapper"><iframe title="Dragon Adventure Particle System" width="786" height="442" src="https://www.youtube.com/embed/NNpSr7xc2P4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div><p></p><h3>Description:</h3> <p>While experimenting with visual effects for my game, I took time to explore Unity’s Particle System.</p>
-<p>I learned how various parameters influence the behavior of particles—such as their direction, shape, speed, color, brightness, and form. This helped me understand how to fine-tune effects for different gameplay scenarios.</p><p></p>            </div>
-        </div>
+			<ul>
+			<li>When the <strong>Space</strong> key is pressed, the character jumps by applying predefined forces and updating animation states.</li>
+			<li>When the <strong>left mouse button</strong> is held down, the character continuously fires (attack is triggered) until the mouse button is released.</li>
+			</ul>
 
-        </div>    
+			<p>This block handles input specifically for the Unity Editor:</p>
+
+			<pre><code class="hljs language-php">
+				<span class="hljs-comment">#if UNITY_EDITOR</span>
+
+				<span class="hljs-comment">// Process Moving</span>
+				<span class="hljs-keyword">if</span> (Input.<span class="hljs-title function_ invoke__">GetKeyDown</span>(KeyCode.Space))
+				{
+					isHoldingOnLeft = <span class="hljs-literal">true</span>;
+					status = PlayerStatus.Normal;
+					anim.<span class="hljs-title function_ invoke__">SetBool</span>(<span class="hljs-string">"isIdle"</span>, <span class="hljs-literal">false</span>); <span class="hljs-comment">// onGround = false;</span>
+
+					<span class="hljs-comment">// tutorialManager.SetIndex(-1); // Passed step 1;</span>
+
+					<span class="hljs-comment">// Set Force</span>
+					tempJumpForce = jumpForce;
+					tempMoveForce = moveForce;
+					rgbd2D.velocity = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vector2</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+					<span class="hljs-title function_ invoke__">Moving</span>();
+					tempJumpForce = additionalJumpForce;
+					tempMoveForce = additionalMoveForce;
+				}
+
+				<span class="hljs-keyword">if</span> (Input.<span class="hljs-title function_ invoke__">GetKeyUp</span>(KeyCode.Space))
+				{
+					isHoldingOnLeft = <span class="hljs-literal">false</span>;
+					holdingDuration = <span class="hljs-number">0</span>f;
+				}
+
+				<span class="hljs-comment">// Process left mouse clicked =&gt; Shooter</span>
+				<span class="hljs-keyword">if</span> (EventSystem.current.<span class="hljs-title function_ invoke__">IsPointerOverGameObject</span>())
+				{
+					<span class="hljs-keyword">return</span>;
+				}
+
+				<span class="hljs-keyword">if</span> (Input.<span class="hljs-title function_ invoke__">GetMouseButtonDown</span>(<span class="hljs-number">0</span>))
+				{
+					<span class="hljs-keyword">var</span> clickPos = Input.mousePosition;
+					<span class="hljs-keyword">if</span> (attackInputEnabled)
+					{
+						emberSkillManager.<span class="hljs-title function_ invoke__">TryAttack</span>(clickPos, <span class="hljs-attr">isDown</span>: <span class="hljs-literal">true</span>);
+					}
+				}
+
+				<span class="hljs-keyword">if</span> (Input.<span class="hljs-title function_ invoke__">GetMouseButtonUp</span>(<span class="hljs-number">0</span>))
+				{
+					<span class="hljs-keyword">var</span> clickPos = Input.mousePosition;
+					emberSkillManager.<span class="hljs-title function_ invoke__">TryAttack</span>(clickPos, <span class="hljs-attr">isDown</span>: <span class="hljs-literal">false</span>);
+				}
+			</code></pre>
+
+			<h2>For Mobile:</h2>
+
+			<ul>
+			<li><strong>Touching the left half</strong> of the screen causes the character to <strong>move/jump</strong>.</li>
+			<li><strong>Tapping repeatedly or holding</strong> on the <strong>right half</strong> of the screen allows the character to <strong>shoot continuously</strong>.</li>
+			</ul>
+
+			<pre><code class="hljs language-csharp">
+				<span class="hljs-meta">#<span class="hljs-keyword">elif</span> UNITY_ANDROID || UNITY_IOS</span>
+
+				<span class="hljs-keyword">if</span> (Input.touchCount &gt; <span class="hljs-number">0</span>)
+				{
+					Touch[] myTouches = Input.touches;
+
+					<span class="hljs-keyword">foreach</span> (Touch touch <span class="hljs-keyword">in</span> myTouches)
+					{
+						<span class="hljs-comment">// If touch on left side =&gt; Movement</span>
+						<span class="hljs-keyword">if</span> (touch.position.x &lt; Screen.width * <span class="hljs-number">2</span> / <span class="hljs-number">5</span>)
+						{
+							<span class="hljs-keyword">if</span> (touch.phase == TouchPhase.Began)
+							{
+								isHoldingOnLeft = <span class="hljs-literal">true</span>;
+								status = PlayerStatus.Normal;
+								anim.SetBool(<span class="hljs-string">"isIdle"</span>, <span class="hljs-literal">false</span>); <span class="hljs-comment">// onGround = false;</span>
+
+								<span class="hljs-comment">// tutorialManager.SetIndex(-1); // Passed step 1</span>
+
+								<span class="hljs-comment">// Set Force</span>
+								tempJumpForce = jumpForce;
+								tempMoveForce = moveForce;
+								rgbd2D.velocity = <span class="hljs-keyword">new</span> Vector2(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+								Moving();
+								tempJumpForce = additionalJumpForce;
+								tempMoveForce = additionalMoveForce;
+							}
+
+							<span class="hljs-keyword">if</span> (touch.phase == TouchPhase.Ended)
+							{
+								isHoldingOnLeft = <span class="hljs-literal">false</span>;
+								holdingDuration = <span class="hljs-number">0f</span>;
+							}
+						}
+						<span class="hljs-comment">// If touch on right side =&gt; Shooting</span>
+						<span class="hljs-keyword">else</span>
+						{
+							<span class="hljs-keyword">if</span> (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+							{
+								<span class="hljs-keyword">return</span>;
+							}
+
+							<span class="hljs-keyword">if</span> (touch.phase == TouchPhase.Began)
+							{
+								emberSkillManager.TryAttack(touch.position, isDown: <span class="hljs-literal">true</span>);
+							}
+							<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (touch.phase == TouchPhase.Ended)
+							{
+								emberSkillManager.TryAttack(touch.position, isDown: <span class="hljs-literal">false</span>);
+							}
+						}
+					}
+				}
+				<span class="hljs-meta">#<span class="hljs-keyword">endif</span></span>
+			</code></pre>
+
+			<p>In this block, I handle input specifically for mobile devices:</p>
+			<ul>
+				<li><strong>Touching the left half</strong> of the screen causes the character to <strong>move/jump</strong>.</li>
+				<li><strong>Tapping repeatedly or holding</strong> on the <strong>right half</strong> of the screen allows the character to <strong>shoot continuously</strong>.</li>
+			</ul>
+
+			<p>This code is designed to work with Unity's EventSystem, ensuring that touch events are processed correctly.</p>
+			<p></p>            
+
+		</div>
+	</div>
+
+	<div class="collapse-group">
+		<div class="item-collapse-label active">
+			<div class="collapse-icons">
+				<span class="collapse-icon collapse-icon-up"></span>
+				<span class="collapse-icon collapse-icon-down"></span>
+			</div>
+			Particle System            
+		</div>
+		<div class="item-collapse-details" style="display: block;">
+			<div class="demo-video-wrapper demo-video-url-wrapper">
+				<iframe title="Dragon Adventure Particle System" width="786" height="442" src="https://www.youtube.com/embed/NNpSr7xc2P4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div><p></p><h3>Description:</h3> <p>While experimenting with visual effects for my game, I took time to explore Unity’s Particle System.</p>
+			</div>
+			
+			<p>I learned how various parameters influence the behavior of particles—such as their direction, shape, speed, color, brightness, and form. This helped me understand how to fine-tune effects for different gameplay scenarios.</p><p></p>            </div>
+		</div>
+	</div>    
 </div>
 
 
