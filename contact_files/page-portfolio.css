@@ -1,0 +1,224 @@
+.project-row {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh các phần tử */
+    align-items: flex-start; /* Căn các phần tử theo chiều dọc */
+    justify-content: space-between; /* Tạo khoảng cách giữa các cột */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các hàng */
+}
+
+body .project-row .project-year {
+    flex: 0 0 20%; /* Chiếm 20% chiều rộng */
+    background-color: #1e1e2f !important; /* Màu nền tối */
+    color: #ffffff !important; /* Màu chữ trắng */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng */
+    text-align: center; /* Căn chữ ở giữa */
+    font-weight: bold; /* In đậm chữ */
+}
+
+body .project-row .project-details {
+    flex: 0 0 80%; /* Chiếm 80% chiều rộng */
+    background-color: #1e1e2f !important; /* Màu nền tối */
+    color: #ffffff !important; /* Màu chữ trắng */
+    padding: 20px; /* Thêm khoảng cách bên trong */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng */
+    line-height: 1.8; /* Tăng khoảng cách dòng để dễ đọc */
+}
+
+.project-year {
+    position: relative; /* Đặt vị trí tương đối để căn chỉnh các phần tử con */
+}
+
+.project-year-label {
+    color: #ffffff; /* Màu xám cho chữ */
+    font-size: 32px; /* Kích thước chữ */
+    font-weight: bold; /* In đậm chữ */
+    border: 2px solid #ffa500; /* Border màu cam */
+    padding: 10px 15px; /* Thêm khoảng cách bên trong */
+    border-radius: 8px; /* Bo góc */
+    text-align: center; /* Căn giữa chữ */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Thêm hiệu ứng đổ bóng */
+    display: inline-block; /* Đảm bảo kích thước vừa với nội dung */
+    margin-bottom: 15px; /* Thêm khoảng cách dưới */
+}
+
+.project-item {
+    margin-bottom: 15px; /* Thêm khoảng cách giữa các dự án */
+}
+
+.project-item h3 {
+    margin: 0 0 10px; /* Khoảng cách dưới tiêu đề */
+}
+
+.project-item .thumbnail {
+    margin-bottom: 10px; /* Khoảng cách dưới hình ảnh */
+}
+
+.layout-body-center > * {
+    width: 100%; /* Chiều rộng full màn hình */
+    max-width: 100%; /* Đảm bảo không vượt quá chiều rộng của cha */
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+    margin: 0 auto; /* Căn giữa nếu cần */
+}
+
+.project-title-highlight {
+    font-size: 28px; /* Tăng kích thước chữ */
+    font-weight: bold; /* In đậm chữ */
+    color: #a55e0d; /* Màu vàng nổi bật */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Thêm hiệu ứng đổ bóng */
+    margin-bottom: 15px; /* Thêm khoảng cách dưới tiêu đề */
+}
+
+.project-teaser-trailer .page-portfolio-style{
+    width: 100%; /* Chiều rộng full màn hình */
+    max-width: 100%; /* Đảm bảo không vượt quá chiều rộng container */
+    margin: 0 auto; /* Căn giữa nếu cần */
+    padding: 0; /* Loại bỏ padding nếu không cần */
+    box-shadow: none; /* Loại bỏ đổ bóng nếu cần */
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+    background-color: inherit; /* Kế thừa màu nền từ cha nếu cần */
+}
+
+.video-wrapper {
+    width: 100%; /* Chiều rộng full màn hình */
+    max-width: 100%; /* Đảm bảo không vượt quá chiều rộng của cha */
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe,
+.video-wrapper img,
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Chiều rộng full màn hình */
+    height: 100%; /* Đảm bảo tỷ lệ video */
+    object-fit: cover;
+    border-radius: 2%;
+}
+
+
+
+@media screen and (max-width: 768px) 
+{
+    .project-row {
+        flex-direction: column; /* Chuyển sang dạng dọc */
+    }
+
+    .project-item {
+        width: 100%; /* Chiều rộng full màn hình */
+        margin: 0; /* Loại bỏ margin bên ngoài */
+        padding: 10px; /* Thêm khoảng cách bên trong */
+        box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+    }
+
+    .project-year {
+        width: 100%; /* Chiều rộng full màn hình */
+        padding: 10px; /* Thêm padding bên trong */
+        box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+    }
+
+    .project-year-label {
+        text-align: left; /* Căn chữ về bên trái */
+        margin-left: 0; /* Đảm bảo không có khoảng cách thừa */
+        padding-left: 10px; /* Thêm khoảng cách bên trong từ lề trái */
+        display: block; /* Đảm bảo chiếm toàn bộ chiều rộng của cha */
+    }
+
+    .project-details {
+        width: 100%; /* Chiều rộng full màn hình */
+        padding: 20px; /* Thêm khoảng cách bên trong */
+        box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+        text-align: center; /* Căn giữa văn bản */
+        display: flex; /* Sử dụng Flexbox */
+        flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+        align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+        gap: 15px; /* Thêm khoảng cách giữa các phần tử */
+    }
+
+    .project-teaser-trailer .page-portfolio-style{
+        width: 100%; /* Chiều rộng full màn hình */
+        max-width: 100%; /* Đảm bảo không vượt quá chiều rộng container */
+        margin: 0 auto; /* Căn giữa nếu cần */
+        padding: 0; /* Loại bỏ padding nếu không cần */
+        box-shadow: none; /* Loại bỏ đổ bóng nếu cần */
+        box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+        background-color: inherit; /* Kế thừa màu nền từ cha nếu cần */
+    }
+
+    .video-wrapper {
+        width: 100%; /* Chiều rộng full màn hình */
+        max-width: 100%; /* Đảm bảo không vượt quá chiều rộng của cha */
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .video-wrapper iframe,
+    .video-wrapper img,
+    .video-wrapper video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Chiều rộng full màn hình */
+        height: 100%; /* Đảm bảo tỷ lệ video */
+        object-fit: cover;
+    }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) 
+{    
+    .project-row {
+    flex-direction: column; /* Chuyển sang dạng dọc */
+    }
+
+    .project-year,
+    .project-details {
+        flex: none; /* Không chiếm không gian theo tỷ lệ */
+        width: 100%; /* Chiều rộng full màn hình */
+        margin-bottom: 10px; /* Thêm khoảng cách giữa các phần tử */
+    }
+
+    .layout-body-center > * {
+        width: 96%; /* Chiều rộng gần full màn hình */
+        margin-left: 2%; /* Căn giữa với margin */
+        margin-right: 2%;
+        margin-bottom: 15px; /* Thêm khoảng cách giữa các phần tử */
+    }
+
+    .project-teaser-trailer .page-portfolio-style{
+        width: 100%; /* Chiều rộng full màn hình */
+        max-width: 100%; /* Đảm bảo không vượt quá chiều rộng container */
+        margin: 0 auto; /* Căn giữa nếu cần */
+        padding: 0; /* Loại bỏ padding nếu không cần */
+        box-shadow: none; /* Loại bỏ đổ bóng nếu cần */
+        box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+        background-color: inherit; /* Kế thừa màu nền từ cha nếu cần */
+    }
+
+    .video-wrapper {
+        width: 100%; /* Chiều rộng full màn hình */
+        max-width: 100%; /* Đảm bảo không vượt quá chiều rộng của cha */
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .video-wrapper iframe,
+    .video-wrapper img,
+    .video-wrapper video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Chiều rộng full màn hình */
+        height: 100%; /* Đảm bảo tỷ lệ video */
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,81 @@
+/* Style cho item-collapse-label */
+.item-collapse-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: default;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid #301c3d;    
+    user-select: none; /* Ngăn chọn văn bản */
+    outline: none; /* Loại bỏ viền focus */
+}
+
+.item-collapse-label:hover {
+    background-color: #2a2a3f;
+    border-color: #9c69cc;
+}
+
+/* Container cho các icon */
+.collapse-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Định dạng chung cho icon tam giác */
+.collapse-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.collapse-icon-up {
+    border-bottom: 10px solid #ffffff;
+    transform: rotate(0deg);
+    margin-bottom: 2px;
+}
+
+.collapse-icon-down {
+    border-top: 10px solid #ffffff;
+    transform: rotate(0deg);
+    margin-top: 2px;
+}
+
+.item-collapse-label.active .collapse-icon-up {
+    transform: rotate(180deg);
+}
+
+.item-collapse-label.active .collapse-icon-down {
+    transform: rotate(-180deg);
+}
+
+/* Style cho item-collapse-details */
+.item-collapse-details {
+    display: none;
+    background: linear-gradient(0deg, #121212, #2a2a3f);
+    color: #cccccc;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Hiển thị chi tiết khi label có class active */
+.item-collapse-label.active + .item-collapse-details {
+    display: block; /* Hiển thị chi tiết */
+}

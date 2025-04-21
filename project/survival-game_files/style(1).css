@@ -1,0 +1,189 @@
+
+
+/*
+Theme Name:   Samueng
+Theme URI:    https://example.com/samueng/
+Author:       Samuel Nguyen
+Author URI:   https://example.com
+Description: Đây là theme tùy chỉnh của tôi.
+Version: 1.0
+License: GPLv2 or later
+Text Domain: mytheme
+*/
+
+
+/* Import theme style */
+@import url("../kubio/style.css");
+
+
+/* Đặt màu nền cho footer giống với body */
+footer {
+    background-color: #121212; /* Màu nền giống với body */
+    color: #ffffff; /* Màu chữ trắng để dễ đọc */
+}
+
+
+/* .feature-list {
+    margin: 20px;
+}
+
+.feature-item {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.feature-item:hover {
+    background-color: #45a049;
+}
+
+.feature-content {
+    padding: 10px;
+    background-color: #f1f1f1;
+    display: none;
+    font-size: 16px;
+} */
+
+
+
+
+/* Định dạng chung cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Kích thước chữ nhỏ hơn */
+    line-height: 1.6; /* Khoảng cách dòng thoáng hơn */
+    color: #cccccc; /* Màu chữ sáng */
+    background-color: #1e1e1e; /* Nền tối */
+    margin: 0;
+    padding: 0;
+}
+
+/* Định dạng cho các tiêu đề */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+    color: #ebebeb; /* Màu chữ sáng */
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Định dạng cho đoạn văn */
+p {
+    font-size: 16px; /* Kích thước chữ nhỏ hơn */
+    line-height: 1.6; /* Khoảng cách dòng thoáng hơn */
+    color: #cccccc; /* Màu chữ nhạt hơn cho đoạn văn */
+    margin-bottom: 15px;
+}
+
+
+
+.image-container {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh */
+    align-items: flex-start; /* Căn thẳng top */
+}
+
+.image-container .image-align-top {
+    margin: 10px; /* Đảm bảo không có margin thừa */
+    align-self: flex-start; /* Đảm bảo hình ảnh căn thẳng top */
+}
+
+
+
+/* Project search/filter/sort*/
+
+.project-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.project-controls input,
+.project-controls select,
+.project-controls button {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.project-controls input {
+    flex: 2;
+}
+
+.project-controls select,
+.project-controls button {
+    flex: 1;
+}
+
+
+
+
+/* Định dạng cho các liên kết */
+a {
+    color: #0073aa; /* Màu xanh cho liên kết */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Định dạng cho danh sách */
+ul, ol {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+
+
+
+/* Định dạng cho các khối code */
+pre {
+    background-color: #2d2d2d; /* Nền tối hơn */
+    color: #f8f8f2; /* Màu chữ sáng */
+    border-radius: 8px; /* Bo góc */
+    padding: 15px; /* Giảm khoảng cách bên trong */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    overflow-x: auto; /* Thêm thanh cuộn ngang nếu mã quá dài */
+    font-size: 13px; /* Kích thước chữ nhỏ hơn */
+    line-height: 1.5; /* Khoảng cách dòng nhỏ hơn */
+    border: 1px solid #444; /* Viền nhẹ */
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace; /* Phông chữ monospace */
+    font-size: 13px; /* Kích thước chữ nhỏ hơn */
+    color: #f8f8f2; /* Màu chữ sáng */
+}
+
+
+
+#footer
+{
+    text-align: center;
+    align-items: center;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+}
+table, th, td {
+    border: 1px solid #ccc;
+}
+td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    padding: 10px;
+    text-align: center;
+    background-color: #121212;
+}
