@@ -1,0 +1,40 @@
+.project-row {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh các phần tử */
+    align-items: flex-start; /* Căn các phần tử theo chiều dọc */
+    justify-content: space-between; /* Tạo khoảng cách giữa các cột */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các hàng */
+}
+
+body .project-row .project-year {
+    flex: 0 0 20%; /* Chiếm 20% chiều rộng */
+    background-color: #1e1e2f !important; /* Màu nền tối */
+    color: #ffffff !important; /* Màu chữ trắng */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng */
+    text-align: center; /* Căn chữ ở giữa */
+    font-weight: bold; /* In đậm chữ */
+}
+
+body .project-row .project-details {
+    flex: 0 0 80%; /* Chiếm 80% chiều rộng */
+    background-color: #1e1e2f !important; /* Màu nền tối */
+    color: #ffffff !important; /* Màu chữ trắng */
+    padding: 20px; /* Thêm khoảng cách bên trong */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng */
+    line-height: 1.8; /* Tăng khoảng cách dòng để dễ đọc */
+}
+
+
+.project-item {
+    margin-bottom: 15px; /* Thêm khoảng cách giữa các dự án */
+}
+
+.project-item h3 {
+    margin: 0 0 10px; /* Khoảng cách dưới tiêu đề */
+}
+
+.project-item .thumbnail {
+    margin-bottom: 10px; /* Khoảng cách dưới hình ảnh */
+}
